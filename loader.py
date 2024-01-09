@@ -2,7 +2,7 @@ from aiogram import Dispatcher, Bot
 import sqlite3
 
 
-token = "6921968249:AAGD3RvAXNMMuQ4m6OICprMbdOXWFz7yllY"
+token = ""
 bot = Bot(token, parse_mode='html')
 dp = Dispatcher()
 db = sqlite3.connect('db.sqlite3')
