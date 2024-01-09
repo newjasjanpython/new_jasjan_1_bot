@@ -2,7 +2,7 @@ from loader import dp, db, cur
 from aiogram.filters import Command
 from aiogram import types
 
-@dp.message_handler(Command('start'))
+@dp.message(Command('start'))
 async def welcome(msg: types.Message):
     with db:
         cur.execute("INSERT OR REPLACE INTO users (tg_id, username) VALUES (?, ?)", (

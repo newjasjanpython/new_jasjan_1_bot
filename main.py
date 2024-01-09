@@ -13,6 +13,11 @@ with db:
         tg_id INTEGER UNIQUE,
         username TEXT
     )""")
+    cur.execute("""CREATE TABLE IF NOT EXISTS vids (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        download_url TEXT,
+        uid TEXT
+    )""")
 
 
 async def main():
