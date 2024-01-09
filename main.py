@@ -1,6 +1,18 @@
-from loader import dp, bot
+from loader import dp, bot, db, cur
 import asyncio
 import handlers
+import logging
+import sys
+
+
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+with db:
+    cur.execute("""CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tg_id INTEGER UNIQUE,
+        username TEXT
+    )""")
 
 
 async def main():
